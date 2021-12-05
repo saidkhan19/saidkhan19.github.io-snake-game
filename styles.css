@@ -123,6 +123,8 @@ select {
     margin-bottom: 1em;
 
     justify-content: space-between;
+    
+    padding-inline: 10px;
 }
 
 #score, #best-score {
@@ -198,6 +200,9 @@ label {
 
     justify-content: space-between;
     align-items: flex-end;
+    
+    
+    padding-inline: 10px;
 }
 
 .controls {
