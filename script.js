@@ -330,7 +330,10 @@ class Snake {
     static showBestScore() {
         let bestScore = localStorage.getItem('record');
 
-        if (!bestScore) localStorage.setItem('record', 0);
+        if (!bestScore) {
+            localStorage.setItem('record', 0);
+            bestScore = 0;
+        }
         
         document.getElementById('best-score').innerHTML = bestScore;
         document.getElementById('menu-best-score').innerHTML = bestScore;
