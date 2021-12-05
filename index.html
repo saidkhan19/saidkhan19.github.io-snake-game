@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Snake</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="menu flow">
+            <h1 class="menu-header">Snake</h1>
+            <h1 class="you-lost" aria-expanded="false">You Lost!!!</h1>
+            <h2 class="your-score" aria-expanded="false">Your score: <span id="menu-score"></span></h2>
+            <h2>Best score: <span id="menu-best-score"></span></h2>
+
+            <div>
+                <p class="select-difficulty">Select the difficulty:</p>
+                <input type="radio" name="difficulty" value="python" id="python">
+                <label for="python">Python</label>
+                <input type="radio" name="difficulty" value="rabbit" id="rabbit">
+                <label for="rabbit">Rabbit</label>
+                <input type="radio" name="difficulty" value="turtle" id="turtle">
+                <label for="turtle">Turtle</label>
+            </div>
+
+            <button class="play-btn"></button>
+        </div>
+        <div class="header">
+            <h1>Snake</h1>
+            <div>
+                <input type="checkbox" name="use-buttons" id="use-buttons">
+                <label for="use-buttons">Use buttons</label>
+            </div>
+        </div>
+        <div class="game-info">
+            <h2 id="score-h2" aria-expanded="false">Score: <span id=score></span></h2>
+            <h2>Best score: <span id=best-score></span></h2>
+        </div>
+
+        <div class="box">
+            <div id="head" class="snake-box" aria-expanded="false"></div>
+        </div>
+
+        <div class="controls" aria-expanded="false">
+            <button class="control-btn" id="up"><img src="./assets/up-arrow.png" alt="up"></button>
+            <button class="control-btn" id="right"><img src="./assets/right-arrow.png" alt="right"></button>
+            <button class="control-btn" id="down"><img src="./assets/down-arrow.png" alt="down"></button>
+            <button class="control-btn" id="left"><img src="./assets/left-arrow.png" alt="left"></button>
+        </div>
+    </div>
+</body>
+</html>

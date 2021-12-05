@@ -1,0 +1,242 @@
+:root {
+    --clr-dark: 230 35% 7%;
+    --clr-light: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+}
+
+/*  Reset  */
+
+*:not(.box)
+, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body,
+h1,h2,h3,h4,h5,
+p,
+figure,
+picture {
+    margin: 0;
+    font-weight: 400;
+}
+
+body {
+    font-family: cursive, sans-serif;
+    font-size: var(--fs-400);
+    color: rgb(190,60,0);
+    background-color: hsl( var(--clr-dark) );
+
+    line-height: 1.5;
+    min-height: 100vh;
+
+    /* padding: 1px; */
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+
+.wrapper {
+    position: relative;
+    height: 100%;
+    width: 524px;
+    margin: 0 auto;
+}
+
+.box {
+    position: relative;
+
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+
+    background-color: #dcc08b;
+    border: 12px solid rgb(150,75,0);
+
+    overflow: hidden;
+}
+
+.snake-box {
+    position: absolute;
+    z-index: 100;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: #287233;
+
+    border-radius: 5px;
+}
+
+.food {
+    position: absolute;
+
+    width: 20px;
+    height: 20px;
+
+    background-image: url('./assets/apple.png');
+    background-position: center;
+    background-size: 24px;
+
+    border-radius: 3px;
+
+    animation-name: food-scale;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes food-scale {
+    from {
+        transform: scale(1.3);
+    }
+    to {
+        transform: scale(.9);
+    }
+}
+
+.game-info {
+    display: flex;
+    margin-bottom: 1em;
+
+    justify-content: space-between;
+}
+
+#score, #best-score {
+    color: white;
+}
+
+.menu {
+    position: absolute;
+    top: 220px;
+
+    z-index: 1000;
+
+    width: 100%;
+    border: 12px solid gray;
+    text-align: center;
+
+    background-color: hsl( var(--clr-white) /.5 );
+}
+
+.play-btn {
+    background-image: url(./assets/play-button-svgrepo-com.svg);
+
+    width: 50px;
+    height: 50px;
+
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    animation: scale 1s linear infinite alternate;
+}
+
+@keyframes scale {
+    from {
+        transform: scale(.9);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+
+    cursor: pointer;
+}
+  
+input:checked {
+    border: 6px solid rgb(150,75,0);
+}
+
+label {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.controls {
+    display: grid;
+
+    grid-template-areas: 
+                            ". . . . u . . . "
+                            ". . . l . r . . "
+                            ". . . . d . . . ";
+
+    margin-block: 1em ;
+}
+
+#up {
+    grid-area: u;
+}
+#right {
+    grid-area: r;
+}
+#down {
+    grid-area: d;
+}
+#left {
+    grid-area: l;
+}
+
+.control-btn {
+    width: 60px;
+    height: 50px;
+
+    background-color: gray;
+
+    cursor: pointer;
+}
+
+*[aria-expanded="false"] {
+    display: none!important;
+}
+
+.you-lost {
+    color: red;
+}
